@@ -1,33 +1,84 @@
 @tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+  @tailwind components;
+  @tailwind utilities;
+  :root{
+    color: hsl(0, 0%, 3%)    
   }
-}
+  @layer base {
+    :root {
+      --background: 0 0% 3%;
+      --foreground: 0 0% 95%;
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+      --card: 0 0% 100%;
+      --card-foreground: 240 10% 3.9%;
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+      --popover: 0 0% 100%;
+      --popover-foreground: 240 10% 3.9%;
+
+      --primary: 290 100% 32%;
+      --primary-foreground: 0 0% 95%;
+
+      --secondary: 240 4.8% 95.9%;
+      --secondary-foreground: 240 5.9% 10%;
+
+      --muted: 0 0% 40%;
+      --muted-foreground: 0 0% 100%;
+
+      --accent: 286 100% 36%;
+      --accent-foreground: 240 5.9% 10%;
+
+      --destructive: 0 84.2% 60.2%;
+      --destructive-foreground: 0 0% 98%;
+
+      --border: 0 0% 53%;
+      --input: 240 5.9% 90%;
+      --ring: 240 10% 3.9%;
+
+      --radius: 0.5rem;
+    }
+
   }
-}
+
+  @layer base {
+    * {
+      @apply border-border;
+    }
+    body {
+      @apply bg-background text-foreground;
+    }
+    .screen{
+      @apply max-w-[1440px] mx-auto w-full;
+    }
+    .screen-lg{
+      @apply max-w-lg mx-auto w-full;
+    }
+    .shining-button::after{
+      content: '';
+      position: absolute;
+      z-index: 1;
+      transition: all 0.5s;
+      height: 200px;
+      width: 20px;
+      background-color: rgba(255,255,255,0.4);
+      transform: rotate(45deg);
+      left:-100px;
+      top: -40px;
+    }
+    .shining-button:hover::after{
+      left: 140%;
+    }
+    .title{
+      background: linear-gradient(to top,rgb(109, 109, 109), rgba(255,255,255));
+      background-clip: text;
+      color: transparent;
+    }
+
+    @keyframes fast {
+      from{
+        background-size: 100% 100%;
+      }
+      to{
+        background-size : 200% 200%;
+      }
+    }
+  }
