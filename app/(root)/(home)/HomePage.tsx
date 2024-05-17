@@ -50,7 +50,7 @@ const HomePage = () => {
                 </BackgroundGradientAnimation>
             </div>
             <div ref={ref2} className="bg-background min-h-[100vh] w-full overflow-x-hidden">
-                <h3 className='title mx-auto text-[30px]  font-extrabold w-full text-center mt-10 px-4'>Our Digital Services</h3>
+                <h3 className='title mx-auto text-[30px]  font-extrabold w-full text-center mt-[100px] px-4'>Our Digital Services</h3>
                 <div className='grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 max-w-[1440px] w-full mx-auto gap-5 px-6 mt-8'>
                     <div className=' card rounded-xl flex justify-center flex-col items-center gap-3 p-3'>
                         <h2 className='text-[25px] text-violet-400'>Web Desiging</h2>
@@ -76,10 +76,10 @@ const HomePage = () => {
                     </div>
                 </div>
             </div>
-            <div ref={ref2} className="bg-background min-h-[100vh] w-full overflow-x-hidden">
+            <div ref={ref2} className="bg-background min-h-[100vh] w-full overflow-x-hidden mb-[150px]">
                 <h3 className='title mx-auto text-[50px] font-extrabold w-full text-center mt-10 px-4'>Our Latest Works</h3>
-                <div className='overflow-hidden md:mt-0 mt-5'>
-                    <motion.div style={{ marginLeft: `-${hookedYPostion * 600}px` }} className='flex flex-nowrap justify-center gap-5 items-center md:h-[300px] h-[150px] w-max'>
+                <div className='overflow-hidden mt-5'>
+                    <motion.div style={{ marginLeft: `-${hookedYPostion * 600}px` }} className='flex flex-nowrap justify-center gap-5 items-center md:h-[240px] h-[150px] w-max'>
                         <Image className='workCard' src={'/assets/w2.png'} alt='' height={300} width={400} />
                         <Image className='workCard' src={'/assets/w1.png'} alt='' height={300} width={400} />
                         <Image className='workCard' src={'/assets/w3.png'} alt='' height={300} width={400} />
@@ -88,8 +88,8 @@ const HomePage = () => {
                     </motion.div>
                 </div>
                 <div className='overflow-hidden w-full'>
-                    <motion.div style={{ x: `${(hookedYPostion * 600) - 900}px` }} className='flex flex-nowrap justify-center gap-5 items-center md:h-[300px] h-[150px] w-max'>
-                        <Image className='workCard h-[200px]' src={'/assets/w6.png'} alt='' height={300} width={400} />
+                    <motion.div style={{ x: `${(hookedYPostion * 600) - 900}px` }} className='flex flex-nowrap justify-center gap-5 items-center md:h-[240px] h-[150px] w-max'>
+                        <Image className='workCard' src={'/assets/w6.png'} alt='' height={300} width={400} />
                         <Image className='workCard' src={'/assets/w7.png'} alt='' height={300} width={400} />
                         <Image className='workCard' src={'/assets/w8.png'} alt='' height={300} width={400} />
                         <Image className='workCard' src={'/assets/w9.png'} alt='' height={300} width={400} />
