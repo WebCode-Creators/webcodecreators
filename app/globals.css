@@ -1,84 +1,164 @@
 @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
-  :root{
-    color: hsl(0, 0%, 3%)    
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: hsl(0, 0%, 3%)
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 3%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 290 100% 32%;
+    --primary-foreground: 0 0% 95%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 0 0% 40%;
+    --muted-foreground: 0 0% 100%;
+
+    --accent: 286 100% 36%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 53%;
+    --input: 240 5.9% 90%;
+    --ring: 240 10% 3.9%;
+
+    --radius: 0.5rem;
   }
-  @layer base {
-    :root {
-      --background: 0 0% 3%;
-      --foreground: 0 0% 95%;
 
-      --card: 0 0% 100%;
-      --card-foreground: 240 10% 3.9%;
+}
 
-      --popover: 0 0% 100%;
-      --popover-foreground: 240 10% 3.9%;
-
-      --primary: 290 100% 32%;
-      --primary-foreground: 0 0% 95%;
-
-      --secondary: 240 4.8% 95.9%;
-      --secondary-foreground: 240 5.9% 10%;
-
-      --muted: 0 0% 40%;
-      --muted-foreground: 0 0% 100%;
-
-      --accent: 286 100% 36%;
-      --accent-foreground: 240 5.9% 10%;
-
-      --destructive: 0 84.2% 60.2%;
-      --destructive-foreground: 0 0% 98%;
-
-      --border: 0 0% 53%;
-      --input: 240 5.9% 90%;
-      --ring: 240 10% 3.9%;
-
-      --radius: 0.5rem;
-    }
-
+@layer base {
+  * {
+    @apply border-border;
   }
 
-  @layer base {
-    * {
-      @apply border-border;
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  .screen {
+    @apply max-w-[1440px] mx-auto w-full;
+  }
+
+  .screen-lg {
+    @apply max-w-lg mx-auto w-full;
+  }
+
+  .shining-button::after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    transition: all 0.5s;
+    height: 200px;
+    width: 20px;
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: rotate(45deg);
+    left: -100px;
+    top: -40px;
+  }
+
+  .shining-button:hover::after {
+    left: 140%;
+  }
+
+  .title {
+    background: linear-gradient(to top, rgb(179, 179, 179), rgb(112, 112, 112));
+    background-clip: text;
+    color: transparent;
+  }
+
+  .title-animated {
+    background: linear-gradient(to right, hsl(0, 0%, 25%) 0, hsl(0, 0%, 23%) 10%, hsl(0, 0%, 17%) 20%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 6s infinite linear;
+  }
+
+  .workCard {
+    border-radius: 20px;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+
+  .card {
+    position: relative;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    border-radius: 15px;
+    border: 0.1rem solid #ffffff3b;
+}
+/* 
+.card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 15px;
+    border: 3px solid transparent;
+    box-sizing: border-box;
+    animation: borderAnimation 5s linear infinite;
+}
+
+@keyframes borderAnimation {
+    0% {
+        border-color: #ffffff8c transparent transparent transparent;
     }
-    body {
-      @apply bg-background text-foreground;
+    25% {
+        border-color: #fafafa34 #dfdfdfb6 transparent transparent;
     }
-    .screen{
-      @apply max-w-[1440px] mx-auto w-full;
+    50% {
+        border-color: transparent #ffffff60 #ffffffa6 transparent;
     }
-    .screen-lg{
-      @apply max-w-lg mx-auto w-full;
+    75% {
+        border-color: transparent transparent #ddddddea #f8f8f88e;
     }
-    .shining-button::after{
-      content: '';
-      position: absolute;
-      z-index: 1;
-      transition: all 0.5s;
-      height: 200px;
-      width: 20px;
-      background-color: rgba(255,255,255,0.4);
-      transform: rotate(45deg);
-      left:-100px;
-      top: -40px;
+    100% {
+        border-color: #dadada71 transparent transparent #dadada9c;
     }
-    .shining-button:hover::after{
-      left: 140%;
-    }
-    .title{
-      background: linear-gradient(to top,rgb(109, 109, 109), rgba(255,255,255));
-      background-clip: text;
-      color: transparent;
+} */
+
+  @keyframes shine {
+    0% {
+      background-position: 0;
     }
 
-    @keyframes fast {
-      from{
-        background-size: 100% 100%;
-      }
-      to{
-        background-size : 200% 200%;
-      }
+    60% {
+      background-position: 600px;
+    }
+
+    100% {
+      background-position: 600px;
     }
   }
+
+  @keyframes fast {
+    from {
+      background-size: 100% 100%;
+    }
+
+    to {
+      background-size: 200% 200%;
+    }
+  }
+}

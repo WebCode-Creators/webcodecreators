@@ -1,31 +1,34 @@
 'use client'
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import StaggerHoverText from '../ui/StaggerHoverText'
 import { SquareMenu, X } from 'lucide-react'
 import { BiMenuAltRight } from "react-icons/bi";
 import { cn } from '@/lib/utils'
+import { HomeNavbarContext } from '../contexts/HomeNavBarContext'
 
 const HomeNavbar = () => {
-    const [menuopen, setmenuopen] = useState(false)
+    const [menuopen, setmenuopen] = useState(false);
+    const navbarctx = useContext(HomeNavbarContext);
     return (
         <div className='w-full px-5 pt-4 fixed z-[99999]'>
             <nav className='screen p-2 flex justify-between items-center'>
                 <div className='flex items-center gap-4'>
                     <Image src={'/assets/logo.png'} width={50} height={50} alt='' />
-                    <h2 className='font-bold text-[18px]'>WebCodeCreators</h2>
+                    <h2 className='font-extrabold text-primary text-[18px]'><span className={cn("transition-all",navbarctx.light ? 'text-black':'text-white [text-shadow:0px_0px_10px_#000]')}>WEBCODE</span>CREATORS</h2>
                 </div>
                 <div onClick={()=>{
                     setmenuopen(true)
                 }} className='menu p-2 md:hidden block'>
-                    <BiMenuAltRight size={30} />
+                    <BiMenuAltRight className={`text-${navbarctx.light ? 'black':'white'}`} size={30} />
                 </div>
                 <div className={cn('md:relative fixed md:right-0 top-0 bottom-0 md:flex flex md:items-center items-end gap-10 md:flex-row flex-col md:justify-end justify-start md:bg-transparent bg-black md:px-0 md:py-0 py-10 transition-all px-[30px] md:text-[16px] text-[24px] md:max-w-[600px] w-full max-w-[350px] ',menuopen ? 'right-0' : 'right-[-350px]')}>
                     <div className='md:flex-row md:flex hidden flex-col items-center gap-10 '>
-                        <StaggerHoverText link='/' text='Home' />
-                        <StaggerHoverText link='/' text='Our-Works' />
-                        <StaggerHoverText link='/' text='Contact' />
+                        <StaggerHoverText color={navbarctx.light ? 'black':'white'} link='/' text='Home' />
+                        <StaggerHoverText color={navbarctx.light ? 'black':'white'} link='/' text='Pricing' />
+                        <StaggerHoverText color={navbarctx.light ? 'black':'white'} link='/' text='Our-Works' />
+                        <StaggerHoverText color={navbarctx.light ? 'black':'white'} link='/' text='Contact' />
                     </div>
                     <div onClick={()=>{
                         setmenuopen(false)

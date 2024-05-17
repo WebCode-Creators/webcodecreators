@@ -4,7 +4,7 @@ import Link from 'next/link'
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 
-const StaggerHoverText = ({text,link,active}:{text:string,link:string,active?:boolean}) => {
+const StaggerHoverText = ({text,link,active,color}:{text:string,link:string,active?:boolean,color?:string}) => {
     const [hover, sethover] = useState(false)
     const container = {
         notActivated: {
@@ -43,14 +43,14 @@ const StaggerHoverText = ({text,link,active}:{text:string,link:string,active?:bo
             {text.split('').map((value,i)=>{
                 return <motion.div 
                 key={i}
-                className="flex"
+                className={`flex text-${color ?? 'zinc-900'} font-semibold mix-blend-hard-light`}
                 transition={{
                     type:'spring',
                     delay:i*0.01}}
                 variants={container}
                 initial="notActivated"
                 animate={ hover ? "activated" : "notActivated" }
-                >{value.replace('-',' ')}</motion.div>
+                >{value.replace('',"")}</motion.div>
             })}
         </motion.div>
         <motion.div className="flex h-[40px]" variants={container}
@@ -58,14 +58,14 @@ const StaggerHoverText = ({text,link,active}:{text:string,link:string,active?:bo
             {text.split('').map((value,i)=>{
                 return <motion.div 
                 key={i}
-                className="flex text-violet-500"
+                className="flex text-violet-500 font-semibold"
                 transition={{
                     type:'spring',
                     delay:i*0.01}}
                 variants={container}
                 initial="notActivated"
                 animate={ hover ? "activated" : "notActivated" }
-                >{value.replace('-',' ')}</motion.div>
+                >{value.replace('',' ')}</motion.div>
             })}
         </motion.div>
         
