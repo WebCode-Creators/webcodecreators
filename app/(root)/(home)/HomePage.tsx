@@ -71,7 +71,7 @@ const HomePage = () => {
                 <div className='w-full mx-auto mt-10 flex justify-center'>
                     <div className='max-w-[450px] w-full card rounded-xl justify-center flex flex-col items-center gap-3 p-3'>
                         <h2 className='text-[25px] text-violet-400'>Graphic Desiging</h2>
-                        <h2>Enhance your brand's visual identity with our creative graphic design solutions. From logos to marketing materials, we craft compelling visuals that captivate and engage your audience.</h2>
+                        <h2>Enhance your brand{'\''}s visual identity with our creative graphic design solutions. From logos to marketing materials, we craft compelling visuals that captivate and engage your audience.</h2>
                         <Link href={'/'} className='border-[0.01rem] rounded-full hover:bg-zinc-50/10 ms-auto px-3 py-2 border-zinc-900'>more.</Link>
                     </div>
                 </div>
