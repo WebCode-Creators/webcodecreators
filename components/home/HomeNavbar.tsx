@@ -18,6 +18,7 @@ const HomeNavbar = () => {
                     <Image src={'/assets/logo.png'} width={50} height={50} alt='' />
                     <h2 className='font-extrabold text-primary text-[18px]'><span className={cn("transition-all",navbarctx.light ? 'text-black':'text-white [text-shadow:0px_0px_10px_#000]')}>WEBCODE</span>CREATORS</h2>
                 </div>
+                
                 <div onClick={()=>{
                     setmenuopen(true)
                 }} className='menu p-2 md:hidden block'>
@@ -25,9 +26,9 @@ const HomeNavbar = () => {
                 </div>
                 <div className={cn('md:relative fixed md:right-0 top-0 bottom-0 md:flex flex md:items-center items-end gap-10 md:flex-row flex-col md:justify-end justify-start md:bg-transparent bg-black md:px-0 md:py-0 py-10 transition-all px-[50px] md:text-[16px] text-[24px] md:max-w-[600px] w-max ',menuopen ? 'right-0' : 'right-[-350px]')}>
                     <div className='md:flex-row md:flex hidden flex-col items-center gap-10 '>
-                        <StaggerHoverText color={navbarctx.light ? 'black':'white'} link='/' text='Home' />
+                        <StaggerHoverText color={navbarctx.light ? 'black':'white'} link='/#' text='Home' />
                         <StaggerHoverText color={navbarctx.light ? 'black':'white'} link='/' text='Pricing' />
-                        <StaggerHoverText color={navbarctx.light ? 'black':'white'} link='/' text='Our-Works' />
+                        <StaggerHoverText color={navbarctx.light ? 'black':'white'} link='/#OurWorks' text='Our-Works' />
                         <StaggerHoverText color={navbarctx.light ? 'black':'white'} link='/' text='Contact' />
                     </div>
                     <div onClick={()=>{
