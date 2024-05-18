@@ -114,7 +114,7 @@ const HomePage = () => {
                 </div>
             </div>
             <Pricings />
-            <div className='screen flex justify-between px-10 py-10 '>
+            <div className='screen flex md:flex-row flex-col gap-5 items-center justify-between px-10 py-10 '>
                 <h3 className='text-[15px] text-zinc-300'>&copy; WebCodeCreators all rights reserved</h3>
                 <div className='flex gap-4 text-[14px] text-zinc-400'>
                     <Link href={'/'}>Terms & Conditions</Link>
