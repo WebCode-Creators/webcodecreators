@@ -8,6 +8,16 @@ const OurWorks = () => {
     const [hidden, sethidden] = useState(true);
     const images = [
         {
+            image: 'wsreyas.png',
+            title: "Sreyas V | PortFolio",
+            desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, vel."
+        },
+        {
+            image: 'wabin.png',
+            title: "Abin Antony Kattady | Portfolio",
+            desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, vel."
+        },
+        {
             image: 'w1.png',
             title: "Big brand Design",
             desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, vel."
