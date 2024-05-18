@@ -27,7 +27,7 @@ const HomeNavbar = () => {
                 <div className={cn('md:relative fixed md:right-0 top-0 bottom-0 md:flex flex md:items-center items-end gap-10 md:flex-row flex-col md:justify-end justify-start md:bg-transparent bg-black md:px-0 md:py-0 py-10 transition-all px-[50px] md:text-[16px] text-[24px] md:max-w-[600px] w-max ',menuopen ? 'right-0' : 'right-[-350px]')}>
                     <div className='md:flex-row md:flex hidden flex-col items-center gap-10 '>
                         <StaggerHoverText color={navbarctx.light ? 'black':'white'} link='/#' text='Home' />
-                        <StaggerHoverText color={navbarctx.light ? 'black':'white'} link='/' text='Pricing' />
+                        <StaggerHoverText color={navbarctx.light ? 'black':'white'} link='/#Pricings' text='Pricing' />
                         <StaggerHoverText color={navbarctx.light ? 'black':'white'} link='/#OurWorks' text='Our-Works' />
                         <StaggerHoverText color={navbarctx.light ? 'black':'white'} link='/' text='Contact' />
                     </div>
@@ -38,8 +38,8 @@ const HomeNavbar = () => {
                             Close <X className='' size={30} />
                         </div>
                         <Link href={'/'}>Home</Link>
-                        <Link href={'/'}>Pricings</Link>
-                        <Link href={'/'}>Our Works</Link>
+                        <Link href={'/#Pricings'}>Pricings</Link>
+                        <Link href={'/#OurWorks'}>Our Works</Link>
                         <Link href={'/'}>Contact</Link>
                     </div>
                     <Link className='flex px-4 py-3 rounded-full bg-gradient-to-t from-primary to-violet-800 hover:scale-105 transition-all shining-button overflow-hidden relative ' href={'/'}>Enquire Now</Link>

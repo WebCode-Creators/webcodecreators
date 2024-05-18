@@ -9,6 +9,7 @@ import React, { useContext, useEffect, useRef, useState } from 'react'
 import { useInView } from 'react-intersection-observer'
 import OurWorks from '@/components/home/OurWorks'
 import { BiPhoneCall } from 'react-icons/bi'
+import Pricings from '@/components/home/Pricings'
 
 const HomePage = () => {
     const [section1Ref, section1InView] = useInView({ threshold: 0.1 });
@@ -43,8 +44,8 @@ const HomePage = () => {
     return (
         <>
             <div ref={section1Ref} className='w-full relative z-[2]'>
-                <BackgroundGradientAnimation className="min-h-[100vh] h-max w-full overflow-x-hidden bg-white/90 flex flex-col items-center justify-between" >
-                    <motion.div className="flex flex-col items-center justify-center h-full mt-[9rem]">
+                <BackgroundGradientAnimation className="min-h-[100vh] h-max w-full overflow-x-hidden bg-white/90 flex flex-col items-center justify-between relative" >
+                    <motion.div className="flex z-[3] flex-col items-center justify-center h-full mt-[9rem]">
                         <motion.h2 initial={{ opacity: 0, y: 20 }} transition={{ duration: 0.4, stiffness: 1 }} animate={{ opacity: 1, y: 0 }} className="md:text-[45px] text-[40px] max-w-[800px] text-center font-extrabold title-animated ">
                             <span className='md:text-[45px] text-[25px]'>Crafting Digital Excellence through</span> <br />WebCodeCreators</motion.h2>
                         <p className="text-primary font-medium">Where Vision Meets Innovation</p>
@@ -54,6 +55,7 @@ const HomePage = () => {
                         </div>
                         <Image src={'/assets/headerimg.png'} width={500} className="mt-6 object-top object-cover overflow-hidden" height={200} alt="" />
                     </motion.div>
+                    <Image src={'/assets/bg-hero.png'} fill className='z-[1] blur-xl' alt='' />
                 </BackgroundGradientAnimation>
             </div>
             <div ref={ref2} className="bg-background min-h-[100vh] w-full overflow-y-hidden overflow-x-hidden">
@@ -63,7 +65,7 @@ const HomePage = () => {
             {/* // Works HEad */}
 
             <OurWorks />
-            <div ref={ref2} className="bg-background mt-[80px] relative h-[400px] w-full overflow-hidden">
+            <div ref={ref2} className="bg-background relative h-[400px] w-full overflow-hidden">
                 <div className='w-full rotate-45 mt-[-300px]'>
                     <div className='overflow-hidden mt-5'>
                         <motion.div style={{ marginLeft: `-${hookedYPostion * 600}px` }} className='flex flex-nowrap justify-center gap-5 items-center md:h-[240px] h-[150px] w-max'>
@@ -111,6 +113,15 @@ const HomePage = () => {
                     </div>
                 </div>
             </div>
+            <Pricings />
+            <div className='screen flex justify-between px-10 py-10 '>
+                <h3 className='text-[15px] text-zinc-300'>&copy; WebCodeCreators all rights reserved</h3>
+                <div className='flex gap-4 text-[14px] text-zinc-400'>
+                    <Link href={'/'}>Terms & Conditions</Link>
+                    <Link href={'/'}>Privacy Policy</Link>
+                    <Link href={'/'}>About Us</Link>
+                </div>
+            </div>
         </>
     )
 }
@@ -144,9 +155,7 @@ export const OurServices = () => {
                 <span className='circle3'></span>
                 <Link href={'/'} className='border-[0.01rem] rounded-full hover:bg-zinc-50/10 ms-auto px-3 py-2 border-zinc-900 z-[1]'>read more..</Link>
             </div>
-        </motion.div>
-        <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, stiffness: 1 }} className='w-full mx-auto  flex justify-center px-2'>
-            <div className='max-w-[450px] px-6 w-full card rounded-xl justify-center flex flex-col items-center gap-3 p-3'>
+            <div className='max-w-[590px] mx-auto px-6 w-full card rounded-xl justify-center flex flex-col items-center gap-3 p-23 md:col-span-3'>
                 <Image src={'/assets/graphic-designer.png'} alt="" className='mt-3' width={90} height={90} />
                 <h2 className='text-[25px] text-violet-400'>Graphic Desiging</h2>
                 <h2>Enhance your brand{'\''}s visual identity with our creative graphic design solutions. From logos to marketing materials, we craft compelling visuals that captivate and engage your audience.</h2>
@@ -156,6 +165,10 @@ export const OurServices = () => {
                 <Link href={'/'} className='border-[0.01rem] rounded-full hover:bg-zinc-50/10 ms-auto px-3 py-2 border-zinc-900 z-[1]'>read more..</Link>
             </div>
         </motion.div>
+
+        {/* <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, stiffness: 1 }} className='w-full mx-auto  flex justify-center px-2'>
+            
+        </motion.div> */}
     </>
 }
 export default HomePage
