@@ -14,7 +14,7 @@ const Pricings = () => {
                 </div>
                 <motion.div initial={{opacity:0, y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:0.3,stiffness:1}} className='grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 px-6 gap-3 w-full mb-[100px] items-center'>
                     <div className='bg-black/50 px-6 py-3 rounded-2xl'>
-                        <h4 className='text-[35px] font-semibold title m-0 p-0'>Web Development</h4>
+                        <h4 className='text-[30px] font-extrabold title m-0 p-0'>Web Development</h4>
                         <p className='text-[20px] m-0 p-0 text-zinc-700'>For Small business</p>
                         <h1><span className='text-[40px] title font-extrabold'>15k - 20k</span><span className='text-zinc-500'>/4 year</span></h1>
                         <div className='px-2 mt-3 mb-4 text-zinc-200'>
@@ -27,7 +27,7 @@ const Pricings = () => {
                         <button className='w-full rounded-full mt-1 mb-2 hover:bg-zinc-950 transition-all bg-white/20 text-white px-6 py-4 text-center'>Contact Now</button>
                     </div>
                     <div className='bg-violet-500/50 px-6 py-6 rounded-2xl'>
-                        <h4 className='text-[30px] font-bold title m-0 p-0'>Web Application</h4>
+                        <h4 className='text-[30px] font-extrabold title m-0 p-0'>Web Application</h4>
                         <p className='text-[18px] m-0 p-0 text-zinc-200'>For large business</p>
                         <h1><span className='text-[40px] title font-extrabold'>25k - 50k</span><span className='text-zinc-500'>for 4 years</span></h1>
                         <div className='px-2 mt-3 mb-4 text-zinc-200'>
