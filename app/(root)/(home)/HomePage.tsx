@@ -52,7 +52,7 @@ const HomePage = () => {
                             <Link className='flex px-4 py-3 rounded-full text-muted border-[0.02rem] border-muted hover:scale-105 transition-all shining-button overflow-hidden relative ' href={'/#OurWorks'}>Our Works</Link>
                             <Link className='flex px-4 py-3 rounded-full bg-gradient-to-t from-primary to-violet-800 hover:scale-105 transition-all shining-button overflow-hidden relative ' href={'/'}>Get a Quote</Link>
                         </div>
-                        <Image src={'/assets/headerimg.png'} width={500} className=" object-top object-cover overflow-hidden" height={200} alt="" />
+                        <Image src={'/assets/headerimg.png'} width={500} className="mt-6 object-top object-cover overflow-hidden" height={200} alt="" />
                     </motion.div>
                 </BackgroundGradientAnimation>
             </div>
