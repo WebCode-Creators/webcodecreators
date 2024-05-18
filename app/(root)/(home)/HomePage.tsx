@@ -145,7 +145,7 @@ export const OurServices = () => {
                 <Link href={'/'} className='border-[0.01rem] rounded-full hover:bg-zinc-50/10 ms-auto px-3 py-2 border-zinc-900 z-[1]'>read more..</Link>
             </div>
         </motion.div>
-        <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, stiffness: 1 }} className='w-full mx-auto mt-10 flex justify-center px-2'>
+        <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, stiffness: 1 }} className='w-full mx-auto  flex justify-center px-2'>
             <div className='max-w-[450px] px-6 w-full card rounded-xl justify-center flex flex-col items-center gap-3 p-3'>
                 <Image src={'/assets/graphic-designer.png'} alt="" className='mt-3' width={90} height={90} />
                 <h2 className='text-[25px] text-violet-400'>Graphic Desiging</h2>

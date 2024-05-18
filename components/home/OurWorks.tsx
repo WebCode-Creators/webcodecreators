@@ -74,7 +74,7 @@ const OurWorks = () => {
                 <h3 className='md:text-[44px] font-extrabold title text-[25px]'>Our Recent Works</h3>
                 <p className='text-[13px] text-zinc-500 mt-0 mb-6 max-w-[700px] '>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque doloremque culpa non! Quisquam placeat unde aut iste? Nobis voluptas a ducimus fuga placeat atque nesciunt!</p>
             </div>
-            <div className={cn('sm:grid hidden mt-5 grid-cols-3 gap-10 px-3 transition-all duration-700 overflow-hidden', hidden ? 'h-[450px]' : 'h-[1000px]')}>
+            <div className={cn('sm:grid hidden mt-5 grid-cols-3 gap-10 px-3 transition-all duration-700 overflow-hidden', hidden ? 'h-[450px]' : 'h-[1300px]')}>
                 {images.map((item, index) => {
                     return <SwiperSlide key={index} className='group transition-all'>
                         <div className=' max-w-[700px] hover:scale-105 transition-all w-full min-h-[220px] relative bg-zinc-900 overflow-hidden rounded-xl '>
