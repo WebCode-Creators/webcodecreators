@@ -12,7 +12,7 @@ const HomeNavbar = () => {
     const [menuopen, setmenuopen] = useState(false);
     const navbarctx = useContext(HomeNavbarContext);
     return (
-        <div className='w-full px-5 pt-4 fixed z-[99999]'>
+        <div className={cn('w-full px-5 pt-4 fixed z-[99999] transition-all duration-500',navbarctx.light ? '':'bg-black')}>
             <nav className='screen p-2 flex justify-between items-center'>
                 <div className='flex items-center gap-4'>
                     <Image src={'/assets/logo.png'} width={50} height={50} alt='' />
@@ -23,7 +23,7 @@ const HomeNavbar = () => {
                 }} className='menu p-2 md:hidden block'>
                     <BiMenuAltRight className={`text-${navbarctx.light ? 'black':'white'}`} size={30} />
                 </div>
-                <div className={cn('md:relative fixed md:right-0 top-0 bottom-0 md:flex flex md:items-center items-end gap-10 md:flex-row flex-col md:justify-end justify-start md:bg-transparent bg-black md:px-0 md:py-0 py-10 transition-all px-[30px] md:text-[16px] text-[24px] md:max-w-[600px] w-full max-w-[350px] ',menuopen ? 'right-0' : 'right-[-350px]')}>
+                <div className={cn('md:relative fixed md:right-0 top-0 bottom-0 md:flex flex md:items-center items-end gap-10 md:flex-row flex-col md:justify-end justify-start md:bg-transparent bg-black md:px-0 md:py-0 py-10 transition-all px-[50px] md:text-[16px] text-[24px] md:max-w-[600px] w-max ',menuopen ? 'right-0' : 'right-[-350px]')}>
                     <div className='md:flex-row md:flex hidden flex-col items-center gap-10 '>
                         <StaggerHoverText color={navbarctx.light ? 'black':'white'} link='/' text='Home' />
                         <StaggerHoverText color={navbarctx.light ? 'black':'white'} link='/' text='Pricing' />
@@ -37,6 +37,7 @@ const HomeNavbar = () => {
                             Close <X className='' size={30} />
                         </div>
                         <Link href={'/'}>Home</Link>
+                        <Link href={'/'}>Pricings</Link>
                         <Link href={'/'}>Our Works</Link>
                         <Link href={'/'}>Contact</Link>
                     </div>

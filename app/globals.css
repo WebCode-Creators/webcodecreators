@@ -76,7 +76,7 @@
   }
 
   .title {
-    background: linear-gradient(to top, rgb(179, 179, 179), rgb(112, 112, 112));
+    background: linear-gradient(to bottom, rgb(238, 238, 238), rgb(112, 112, 112));
     background-clip: text;
     color: transparent;
   }
