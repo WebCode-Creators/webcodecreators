@@ -1,17 +1,19 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Lato, Poppins } from "next/font/google";
 import "./globals.css";
 
 // const inter = Poppins({weight:["100","200","300","400","500","600","700", "800","900"], subsets: ['latin']},);
 const inter = Lato({weight:["100","300","400","700","900"], subsets: ['latin']},);
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+}
+
 export const metadata: Metadata = {
   title: "WebCodeCreators | Home",
-  viewport: {
-    width: "device-width",
-    initialScale:1,
-    userScalable:false
-  },
   openGraph:{
     images:['https://webcodecreators.vercel.app/assets/app.logo']
   },
