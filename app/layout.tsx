@@ -7,6 +7,11 @@ const inter = Lato({weight:["100","300","400","700","900"], subsets: ['latin']},
 
 export const metadata: Metadata = {
   title: "WebCodeCreators | Home",
+  viewport: {
+    width: "device-width",
+    initialScale:1,
+    userScalable:false
+  },
   openGraph:{
     images:['https://webcodecreators.vercel.app/assets/app.logo']
   },
