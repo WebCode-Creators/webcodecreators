@@ -29,7 +29,7 @@ const HomeNavbar = () => {
                         <StaggerHoverText color={navbarctx.light ? 'black':'white'} link='/#' text='Home' />
                         <StaggerHoverText color={navbarctx.light ? 'black':'white'} link='/#Pricings' text='Pricing' />
                         <StaggerHoverText color={navbarctx.light ? 'black':'white'} link='/#OurWorks' text='Our-Works' />
-                        <StaggerHoverText color={navbarctx.light ? 'black':'white'} link='/' text='Contact' />
+                        <StaggerHoverText color={navbarctx.light ? 'black':'white'} link='/#Contact' text='Contact' />
                     </div>
                     <div onClick={()=>{
                         setmenuopen(false)
@@ -40,7 +40,7 @@ const HomeNavbar = () => {
                         <Link href={'/'}>Home</Link>
                         <Link href={'/#Pricings'}>Pricings</Link>
                         <Link href={'/#OurWorks'}>Our Works</Link>
-                        <Link href={'/'}>Contact</Link>
+                        <Link href={'/#Contact'}>Contact</Link>
                     </div>
                     <Link className='flex px-4 py-3 rounded-full bg-gradient-to-t from-primary to-violet-800 hover:scale-105 transition-all shining-button overflow-hidden relative ' href={'/'}>Enquire Now</Link>
                 </div>

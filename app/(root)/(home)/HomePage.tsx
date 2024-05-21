@@ -10,6 +10,7 @@ import { useInView } from 'react-intersection-observer'
 import OurWorks from '@/components/home/OurWorks'
 import { BiPhoneCall } from 'react-icons/bi'
 import Pricings from '@/components/home/Pricings'
+import Form from './Form'
 
 const HomePage = () => {
     const [section1Ref, section1InView] = useInView({ threshold: 0.1 });
@@ -114,6 +115,7 @@ const HomePage = () => {
                 </div>
             </div>
             <Pricings />
+            <Form />
             <div className='screen flex md:flex-row flex-col gap-5 items-center justify-between px-10 py-10 '>
                 <h3 className='text-[15px] text-zinc-300'>&copy; WebCodeCreators all rights reserved</h3>
                 <div className='flex gap-4 text-[14px] text-zinc-400'>
