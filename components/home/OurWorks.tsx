@@ -7,14 +7,40 @@ import Image from 'next/image';
 const OurWorks = () => {
     const [hidden, sethidden] = useState(true);
     const images = [
+
+        {
+            image: 'wabin.png',
+            title: "Abin Antony Kattady | Portfolio",
+            desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, vel."
+        },
         {
             image: 'wsreyas.png',
             title: "Sreyas V | PortFolio",
             desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, vel."
         },
         {
-            image: 'wabin.png',
-            title: "Abin Antony Kattady | Portfolio",
+            image: 'w17.png',
+            title: "DataGrind.Ai",
+            desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, vel."
+        },
+        {
+            image: 'w18.png',
+            title: "Alpha Venture Studio",
+            desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, vel."
+        },
+        {
+            image: 'w19.png',
+            title: "Dashboard - HardhatCloudTech",
+            desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, vel."
+        },
+        {
+            image: 'w20.png',
+            title: "HardhatCloudTech",
+            desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, vel."
+        },
+        {
+            image: 'w21.png',
+            title: "Green X Solutions",
             desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, vel."
         },
         {
@@ -74,7 +100,7 @@ const OurWorks = () => {
                 <h3 className='md:text-[44px] font-extrabold title text-[35px]'>Our Recent Works</h3>
                 <p className='text-[13px] text-zinc-500 mt-0 mb-6 max-w-[700px] '>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque doloremque culpa non! Quisquam placeat unde aut iste? Nobis voluptas a ducimus fuga placeat atque nesciunt!</p>
             </div>
-            <div className={cn('sm:grid hidden mt-5 md:grid-cols-3 grid-cols-2 gap-10 px-3 transition-all duration-700 overflow-hidden', hidden ? 'h-[450px]' : 'h-[1400px]')}>
+            <div className={cn('sm:grid hidden mt-5 md:grid-cols-3 grid-cols-2 gap-10 px-3 transition-all duration-700 overflow-hidden', hidden ? 'h-[450px]' : 'h-[2700px] md:h-[2000px]')}>
                 {images.map((item, index) => {
                     return <SwiperSlide key={index} className='group transition-all'>
                         <div className=' max-w-[700px] opacity-80 group-hover:opacity-100 transition-all w-full min-h-[220px] relative bg-zinc-900 overflow-hidden rounded-xl '>
@@ -98,8 +124,8 @@ const OurWorks = () => {
                     </SwiperSlide>
                 })}
             </div>
-            <div className={cn('absolute bottom-0 left-0 right-0 h-[350px] bg-gradient-to-t flex justify-center items-end from-black to-transparent',hidden? 'flex': 'hidden')}>
-                <button onClick={()=>{
+            <div className={cn('absolute bottom-0 left-0 right-0 h-[350px] bg-gradient-to-t flex justify-center items-end from-black to-transparent', hidden ? 'flex' : 'hidden')}>
+                <button onClick={() => {
                     sethidden(false);
                 }} className='bg-black/80 rounded-full mb-8 px-6 py-2 border-[0.01rem] border-zinc-400 hover:translate-y-[-5px] transition-all hover:scale-105'>Show All</button>
             </div>
