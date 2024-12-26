@@ -19,6 +19,11 @@ const OurWorks = () => {
             desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, vel."
         },
         {
+            image: 'w22.png',
+            title: "Express Travels",
+            desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, vel."
+        },
+        {
             image: 'w17.png',
             title: "DataGrind.Ai",
             desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, vel."

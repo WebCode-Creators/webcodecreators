@@ -198,17 +198,17 @@ const HomePage = () => {
 }
 export const OurServices = () => {
     return <>
-        <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, stiffness: 1 }} className='grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 max-w-[1440px] w-full mx-auto gap-5 px-6 mt-8'>
-            <div className=' card rounded-xl flex justify-center flex-col items-center gap-3 p-3'>
+        <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.6, duration: 0.3, stiffness: 1 }} className='grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 max-w-[1440px] w-full mx-auto gap-5 px-6 mt-8'>
+            <div className=' card rounded-[40px] flex justify-center flex-col items-center gap-3 p-3'>
                 <Image src={'/assets/web-design.png'} alt="" className='mt-3' width={70} height={70} />
-                <h2 className='text-[25px] text-violet-400'>Web Desiging</h2>
+                <h2 className='text-[25px] text-violet-400'>Web Designing</h2>
                 <h2>Transform your vision into a stunning, user-friendly website. Our expert designers craft visually appealing and intuitive designs that captivate your audience and enhance user experience!</h2>
                 <span className='circle1'></span>
                 <span className='circle2'></span>
                 <span className='circle3'></span>
                 <Link href={'/'} className='border-[0.01rem] rounded-full hover:bg-zinc-50/10 ms-auto px-3 py-2 border-zinc-900 z-[1]'>read more..</Link>
             </div>
-            <div className=' card rounded-xl justify-center flex flex-col items-center gap-3 px-6'>
+            <div className=' card rounded-[40px] justify-center flex flex-col items-center gap-3 px-6'>
                 <Image src={'/assets/web-development.png'} alt="" className='mt-3' width={90} height={90} />
                 <h2 className='text-[25px] text-violet-400'>FullStack Web Development</h2>
                 <h2>End-to-end development solutions for both front-end and back-end, creating seamless, scalable, and efficient websites tailored to your needs</h2>
@@ -217,7 +217,7 @@ export const OurServices = () => {
                 <span className='circle3'></span>
                 <Link href={'/'} className='border-[0.01rem] rounded-full hover:bg-zinc-50/10 ms-auto px-3 py-2 border-zinc-900 z-[1]'>read more..</Link>
             </div>
-            <div className=' card rounded-xl justify-center flex flex-col items-center gap-3 p-3'>
+            <div className=' card rounded-[40px] justify-center flex flex-col items-center gap-3 p-3'>
                 <Image src={'/assets/app-development.png'} alt="" className='mt-3' width={90} height={90} />
                 <h2 className='text-[25px] text-violet-400'>App Development</h2>
                 <h2>From concept to launch, we create intuitive and powerful mobile applications. Our team specializes in developing high-quality apps for both iOS and Android, tailored to meet your unique business needs.</h2>
@@ -226,7 +226,7 @@ export const OurServices = () => {
                 <span className='circle3'></span>
                 <Link href={'/'} className='border-[0.01rem] rounded-full hover:bg-zinc-50/10 ms-auto px-3 py-2 border-zinc-900 z-[1]'>read more..</Link>
             </div>
-            <div className='max-w-[590px] mx-auto px-6 w-full card rounded-xl justify-center flex flex-col items-center gap-3 p-23 md:col-span-3'>
+            <div className='max-w-[590px] mx-auto px-6 w-full card rounded-[40px] justify-center flex flex-col items-center gap-3 p-23 md:col-span-3'>
                 <Image src={'/assets/graphic-designer.png'} alt="" className='mt-3' width={90} height={90} />
                 <h2 className='text-[25px] text-violet-400'>Graphic Desiging</h2>
                 <h2>Enhance your brand{'\''}s visual identity with our creative graphic design solutions. From logos to marketing materials, we craft compelling visuals that captivate and engage your audience.</h2>

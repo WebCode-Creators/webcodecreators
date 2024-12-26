@@ -101,11 +101,11 @@
 
   @keyframes animatebg {
     0% {
-      border: 0.1rem solid rgba(255, 255, 255, 0.027);
+      border: 0.1rem solid rgba(61, 54, 240, 0.152);
     }
 
     100% {
-      border: 0.1rem solid rgba(255, 255, 255, 0.171);
+      border: 0.1rem solid rgba(174, 76, 255, 0.171);
 
     }
   }
