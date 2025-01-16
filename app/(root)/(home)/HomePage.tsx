@@ -13,6 +13,7 @@ import OurWorks from '@/components/home/OurWorks'
 import { BiPhoneCall } from 'react-icons/bi'
 import Pricings from '@/components/home/Pricings'
 import Form from './Form'
+import { Parallel } from './pp'
 
 const HomePage = () => {
     const [section1Ref, section1InView] = useInView({ threshold: 0.1 });
@@ -27,7 +28,6 @@ const HomePage = () => {
     const [hookedYPostion, setHookedYPosition] = React.useState(0);
     useMotionValueEvent(scrollYProgress, "change", (latest) => {
         setHookedYPosition(latest);
-        console.log(scrollYProgress)
     })
     useEffect(() => {
         if (section1InView) {
@@ -87,8 +87,8 @@ const HomePage = () => {
             <div>
                 <ParallaxProvider>
                     <div className='flex w-full md:flex-row flex-col'>
-                        <div className='md:mx-10 w-full'>
-                            <div className='w-full max-w-[1200px] my-10 rounded-[50px] mx-auto overflow-hidden'>
+                        <div className=' w-full px-5'>
+                            <div className='w-full  my-10 rounded-[20px] mx-auto overflow-hidden'>
                                 <ParallaxBanner
                                     className="h-[300px] w-full"
                                     layers={[
@@ -101,13 +101,13 @@ const HomePage = () => {
                                     <div
                                         className='relative transition-all hover:opacity-100 justify-center flex items-center opacity-0 sm:text-xl bg-black/80 p-3 w-full h-full text-white'
                                     >
-                                        <span>Unique Designs: Tailored websites that reflect your brand</span>
+                                        <span className='text-center'>Unique Designs: Tailored websites that reflect your brand</span>
                                     </div>
                                 </ParallaxBanner>
                             </div>
                         </div>
-                        <div className='md:mx-10 w-full'>
-                            <div className='w-full max-w-[1200px] my-10 rounded-[50px] mx-auto overflow-hidden'>
+                        <div className=' w-full px-5'>
+                            <div className='w-full max-w-[1200px] my-10 rounded-[20px] mx-auto overflow-hidden'>
                                 <ParallaxBanner
                                     className="h-[300px] w-full"
                                     layers={[
@@ -120,7 +120,7 @@ const HomePage = () => {
                                     <div
                                         className='relative transition-all md:hover:opacity-100  hover:opacity-100 justify-center flex items-center opacity-0 sm:text-xl bg-black/80 p-3 w-full h-full text-white'
                                     >
-                                        <span>Complete Solutions: From concept to launch, we deliver excellence.</span>
+                                        <span className='text-center'>Complete Solutions: From concept to launch, we deliver excellence.</span>
                                     </div>
                                 </ParallaxBanner>
                             </div>
@@ -128,6 +128,7 @@ const HomePage = () => {
                     </div>
                 </ParallaxProvider>
             </div>
+            <Parallel />
             <div ref={ref2} className="bg-background min-h-[100vh] w-full overflow-y-hidden overflow-x-hidden">
                 <h3 className='title mx-auto text-[30px]  font-extrabold w-full text-center mt-[100px] px-4'>Our Digital Services</h3>
                 <OurServices />
