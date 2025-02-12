@@ -17,6 +17,7 @@ export const LaptopModel: React.FC = () => {
 
     if (actions[animationName]) {
       const action = actions[animationName];
+      if(!action) return;
       action.setLoop(LoopOnce, 1); // Play only once
       action.clampWhenFinished = true; // Freeze at the last keyframe
       action.play();
