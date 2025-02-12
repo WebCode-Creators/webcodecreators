@@ -1,11 +1,11 @@
-import HomeNavbar from "@/components/home/HomeNavbar";
-import { BackgroundGradientAnimation } from "@/components/ui/background-gradient";
-import Image from "next/image";
-import Link from "next/link";
-import HomePage from "./HomePage";
+'use client'
 
-export default function Page() {
-    return <main className="w-full flex flex-col overflow-hidden">
-        <HomePage />
+import HomePage from "./HomePage"
+import NewHero from "./newhero"
+
+export default function NewHome(){
+    return <main>
+            <NewHero />
+            <HomePage />
     </main>
 }

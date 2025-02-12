@@ -48,7 +48,7 @@ const HomePage = () => {
     return (
         <>
             <div ref={section1Ref} className="">
-                <section className="pb-12 pt-20 bg-black sm:pb-16 lg:pb-20 xl:pb-24">
+                <section className="hidden pb-12 pt-20 bg-black sm:pb-16 lg:pb-20 xl:pb-24">
                     <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
                         <div className="relative">
                             <div className="lg:w-2/3 pt-10">

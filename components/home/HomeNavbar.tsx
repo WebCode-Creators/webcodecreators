@@ -12,39 +12,30 @@ const HomeNavbar = () => {
     const [menuopen, setmenuopen] = useState(false);
     const navbarctx = useContext(HomeNavbarContext);
     return (
-        <div className={cn('w-full px-5 pt-4 fixed z-[99999] transition-all duration-500',navbarctx.light ? '':'bg-black')}>
+        <div className={cn('w-full px-5 pt-4 top-0 fixed z-[99999] transition-all duration-500', navbarctx.light ? '' : 'sm:bg-transparent bg-black')}>
             <nav className='screen p-2 flex justify-between items-center'>
-                <div className='flex items-center gap-4'>
-                    <Image src={'/assets/logo.png'} width={50} height={50} alt='' />
-                    <h2 className='font-extrabold text-primary text-[18px]'><span className={cn("transition-all",navbarctx.light ? 'text-white':'text-white [text-shadow:0px_0px_10px_#000]')}>WEBCODE</span>CREATORS</h2>
+                <div className='flex items-center'>
+                    <Image src={'/assets/webcode.png'} width={60} height={60} alt='' />
                 </div>
-                
-                <div onClick={()=>{
-                    setmenuopen(true)
-                }} className='menu p-2 md:hidden block'>
-                    <BiMenuAltRight className={`text-${navbarctx.light ? '':'white'}`} size={30} />
-                </div>
-                <div className={cn('md:relative fixed md:right-0 top-0 bottom-0 md:flex flex md:items-center items-end gap-10 md:flex-row flex-col md:justify-end justify-start md:bg-transparent bg-[#181523] sm:shadow-none shadow-[0px_0px_30px_#000] md:px-0 md:py-0 py-10 transition-all px-[50px] md:text-[16px] text-[24px] md:max-w-[600px] w-max ease-in-out duration-500',menuopen ? 'right-0' : 'right-[-350px]')}>
-                    <div className='md:flex-row md:flex hidden flex-col items-center gap-10 '>
-                        <StaggerHoverText color={navbarctx.light ? 'white':'white'} link='/#' text='Home' />
-                        <StaggerHoverText color={navbarctx.light ? 'white':'white'} link='/#Pricings' text='Pricing' />
-                        <StaggerHoverText color={navbarctx.light ? 'white':'white'} link='/#OurWorks' text='Our-Works' />
-                        <StaggerHoverText color={navbarctx.light ? 'white':'white'} link='/#Contact' text='Contact' />
+                <div className="flex items-center">
+                    <Link className='flex px-4 py-2 rounded-full bg-gradient-to-t from-primary font-main to-violet-800 hover:scale-105 transition-all shining-button overflow-hidden relative text-[17px]' href={'/'}>ENQUIRE NOW</Link>
+                    <div onClick={() => {
+                        setmenuopen(true)
+                    }} className='menu p-2 sm:hidden flex'>
+                        <BiMenuAltRight className={`text-${navbarctx.light ? '' : 'white'}`} size={40} />
                     </div>
-                    <div onClick={()=>{
-                        setmenuopen(false)
-                    }} className='md:flex-row md:hidden cursor-pointer flex flex-col items-end gap-4'>
-                        <div className='flex items-center mb-5 mt-4 gap-2 text-muted'>
-                            Close <X className='' size={30} />
-                        </div>
-                        <Link href={'/'}>Home</Link>
-                        <Link href={'/#Pricings'}>Pricings</Link>
-                        <Link href={'/#OurWorks'}>Our Works</Link>
-                        <Link href={'/#Contact'}>Contact</Link>
-                    </div>
-                    <Link className='flex px-4 py-3 rounded-full bg-gradient-to-t from-primary to-violet-800 hover:scale-105 transition-all shining-button overflow-hidden relative ' href={'/'}>Enquire Now</Link>
                 </div>
             </nav>
+            <div className="topbar md:flex hidden fixed z-[999] bg-[#141414] border-[#262626] border-[0.02rem] p-1 rounded-full topbar">
+                <div className="flex relative">
+                    <Link className='font-maim font-regular z-[999]' href={'/'}>HOME</Link>
+                    <Link className='font-main' href={'/'}>WORKS</Link>
+                    <Link className='font-main' href={'/'}>ABOUT US</Link>
+                    <Link className='font-main' href={'/'}>OUR TEAM</Link>
+                    <Link className='font-main' href={'/'}>CONTACT</Link>
+                    <div className="absolute top-0 left-0 bg-[#1F1F1F] w-[100px] h-full rounded-full z-[998]"></div>
+                </div>
+            </div>
         </div>
     )
 }

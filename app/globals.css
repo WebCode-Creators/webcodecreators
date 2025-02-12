@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Bebas+Neue&family=Bruno+Ace+SC&family=Carme&family=Francois+One&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,9 +8,10 @@
 }
 
 @layer base {
-  html{
+  html {
     scroll-behavior: smooth;
   }
+
   :root {
     --background: 0 0% 3%;
     --foreground: 0 0% 95%;
@@ -54,11 +56,19 @@
   }
 
   .screen {
-    @apply max-w-[1440px] mx-auto w-full;
+    @apply max-w-[1700px] mx-auto w-full;
   }
 
   .screen-lg {
     @apply max-w-lg mx-auto w-full;
+  }
+
+  .topbar {
+    @apply flex left-[50%] translate-x-[-50%] top-[20px] items-center gap-1;
+  }
+
+  .topbar a {
+    @apply px-6 py-2 hover:text-primary transition-all flex items-center text-center;
   }
 
   .shining-button::after {
@@ -84,11 +94,25 @@
     color: transparent;
   }
 
+  .font-main {
+    font-family: 'Carme', sans-serif;
+  }
+
+  .font-bebas {
+    font-family: 'Bebas Neue';
+  }
+
   .title-animated {
     background: linear-gradient(to right, hsl(0, 0%, 25%) 0, hsl(0, 0%, 23%) 10%, hsl(0, 0%, 17%) 20%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: shine 6s infinite linear;
+  }
+
+  .gradient-text {
+    background: linear-gradient(to top,#5A3DC5, #FF34F1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   .workCard {
@@ -141,7 +165,7 @@
     border-radius: 50%;
     z-index: 1;
   }
-  
+
   .card span.circle3 {
     position: absolute;
     bottom: -400px;
@@ -152,6 +176,7 @@
     border: 0.01rem solid #ffffff05;
     border-radius: 50%;
   }
+
   /* 
 
 .card::before {
