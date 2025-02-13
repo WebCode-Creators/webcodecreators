@@ -28,11 +28,11 @@ export const LaptopModel: React.FC = () => {
         action.reset().play();
         action.clampWhenFinished = true;
         action.loop = THREE.LoopOnce;
+        action.getMixer().addEventListener("finished", () => {
+          setAnimationComplete(true); // Animation complete
+        });
       }
 
-      action.getMixer().addEventListener("finished", () => {
-        setAnimationComplete(true); // Animation complete
-      });
     }
   }, [actions]);
 
