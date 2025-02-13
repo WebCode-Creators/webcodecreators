@@ -24,9 +24,11 @@ export const LaptopModel: React.FC = () => {
     if (actions[animationName]) {
       animationRef.current = actions[animationName];
       const action = animationRef.current;
-      action.reset().play();
-      action.clampWhenFinished = true;
-      action.loop = THREE.LoopOnce;
+      if (action) {
+        action.reset().play();
+        action.clampWhenFinished = true;
+        action.loop = THREE.LoopOnce;
+      }
 
       action.getMixer().addEventListener("finished", () => {
         setAnimationComplete(true); // Animation complete
@@ -44,7 +46,7 @@ export const LaptopModel: React.FC = () => {
     }
     if (animationComplete) {
       if (animationRef.current) {
-        animationRef.current.time = animationRef.current.getClip().duration * (1 - (progress*8)); // Reverse animation on scroll up
+        animationRef.current.time = animationRef.current.getClip().duration * (1 - (progress * 8)); // Reverse animation on scroll up
       }
     }
   });
