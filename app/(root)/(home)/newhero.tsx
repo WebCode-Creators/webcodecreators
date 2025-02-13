@@ -12,7 +12,7 @@ import Scene from './components/Scene';
 const NewHero = () => {
 
     return (
-        <div className="max-h-[100dvh] h-full overflow-hidden">
+        <div className="max-h-[100dvh] pointer-events-none h-full overflow-hidden">
             <div className="w-full h-[1000px] relative">
                 <div className="absolute z-[2] top-[-50px] left-0 right-0">
                     <h1 className="font-main [line-height:80px] sm:text-[60px] text-[35px] sm:tracking-normal tracking-tight md:text-[80px] text-center">
