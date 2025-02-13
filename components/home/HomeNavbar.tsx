@@ -1,4 +1,5 @@
 'use client'
+import { AnimatePresence, motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useContext, useEffect, useState } from 'react'
@@ -21,13 +22,14 @@ const HomeNavbar = () => {
                     <Link className='flex px-4 py-2 rounded-full bg-gradient-to-t from-primary font-main to-violet-800 hover:scale-105 transition-all shining-button overflow-hidden relative text-[17px]' href={'/'}>ENQUIRE NOW</Link>
                     <div onClick={() => {
                         setmenuopen(true)
-                    }} className='menu p-2 sm:hidden flex'>
+                        console.log('open')
+                    }} className='relative p-2 md:hidden bg-black flex z-[1]'>
                         <BiMenuAltRight className={`text-${navbarctx.light ? '' : 'white'}`} size={40} />
                     </div>
                 </div>
             </nav>
             <div className="topbar md:flex hidden fixed z-[999] bg-[#141414] border-[#262626] border-[0.02rem] p-1 rounded-full topbar">
-                <div className="flex relative">
+                <div className="flex flex-col relative">
                     <Link className='font-maim font-regular z-[999]' href={'/'}>HOME</Link>
                     <Link className='font-main' href={'/'}>WORKS</Link>
                     <Link className='font-main' href={'/'}>ABOUT US</Link>
@@ -36,6 +38,29 @@ const HomeNavbar = () => {
                     <div className="absolute top-0 left-0 bg-[#1F1F1F] w-[100px] h-full rounded-full z-[998]"></div>
                 </div>
             </div>
+            <AnimatePresence>
+                {menuopen && <motion.div
+                    transition={{
+                        stiffness:1
+                    }}
+                    initial={{
+                        y:-500
+                    }}
+                    animate={{y:0}}
+                    className="left-0 right-0 top-0 md:hidden flex flex-col w-full h-auto fixed z-[999] bg-[#141414] border-[#262626] border-[0.02rem] p-1 rounded-b-xl">
+                    <div className="flex relative flex-col gap-5 text-[20px] px-10 py-5">
+                        <div className="flex w-full justify-between items-center mb-5">
+                            <h3 className='font-bebas text-zinc-600 text-4xl'>MENU</h3>
+                            <X onClick={()=>setmenuopen(false)} size={40} />
+                        </div>
+                        <Link className='font-main font-regular z-[999] text-primary' href={'/'}>HOME</Link>
+                        <Link className='font-main' href={'/'}>WORKS</Link>
+                        <Link className='font-main' href={'/'}>ABOUT US</Link>
+                        <Link className='font-main' href={'/'}>OUR TEAM</Link>
+                        <Link className='font-main' href={'/'}>CONTACT</Link>
+                    </div>
+                </motion.div>}
+            </AnimatePresence>
         </div>
     )
 }

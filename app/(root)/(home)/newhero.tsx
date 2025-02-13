@@ -22,7 +22,7 @@ const NewHero = () => {
                         </span></span><br />of Digital Experiences
                     </h1>
                 </div>
-                <Canvas className="relative drop-shadow-lg z-[2] mt-[200px] h-full"
+                <Canvas className="relative pointer-events-none drop-shadow-lg z-[2] mt-[200px] h-full"
                     camera={{ position: [0, 0, 5], fov: 50 }} // Moves to front & lower level
                     style={{ background: "none" }}
                     gl={{ alpha: true }}>
