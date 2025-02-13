@@ -1,12 +1,16 @@
 
 'use client'
-import {motion} from 'framer-motion'
-import React from "react";
-import { Canvas } from "@react-three/fiber";
+import { motion } from 'framer-motion'
+import React, { useRef } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { LaptopModel } from "./components/laptop";
 import Image from "next/image";
+import * as THREE from "three";
+import { useScroll } from 'framer-motion';
+import Scene from './components/Scene';
 const NewHero = () => {
+
     return (
         <div className="max-h-[100dvh] h-full overflow-hidden">
             <div className="w-full h-[1000px] relative">
@@ -22,17 +26,15 @@ const NewHero = () => {
                     camera={{ position: [0, 0, 5], fov: 50 }} // Moves to front & lower level
                     style={{ background: "none" }}
                     gl={{ alpha: true }}>
-                    <ambientLight intensity={1} />
-                    <directionalLight position={[5, 5, 5]} />
-                    <LaptopModel />
-                    <OrbitControls enableZoom={false} enablePan={false} />
+                    <Scene />
                 </Canvas>
+
             </div>
             <Image src={'/assets/bghero.png'} className="absolute left-0 bottom-0 right-0 w-full top-0 md:h-auto h-full object-cover" alt="" width={3000} height={3000} />
             <div className="absolute top-0 left-0 bottom-0 right-0 bg-gradient-to-t from-black to-transparent"></div>
             <motion.div
-                initial={{opacity:0}}
-                animate={{opacity:1}}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
             >
                 <Image src={'/assets/ribbon.png'} className="absolute left-0 bottom-0 right-0 md:object-contain object-cover sm:h-auto h-[50%] w-full" alt="" width={2000} height={3000} />
             </motion.div>
