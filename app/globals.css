@@ -94,7 +94,7 @@
     color: transparent;
   }
 
-  .font-main {
+  .font-main, * {
     font-family: 'Carme', sans-serif;
   }
 

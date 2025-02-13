@@ -229,7 +229,7 @@ export const OurServices = () => {
             </div>
             <div className='max-w-[590px] mx-auto px-6 w-full card rounded-[40px] justify-center flex flex-col items-center gap-3 p-23 md:col-span-3'>
                 <Image src={'/assets/graphic-designer.png'} alt="" className='mt-3' width={90} height={90} />
-                <h2 className='text-[25px] text-violet-400'>Graphic Desiging</h2>
+                <h2 className='text-[25px] text-violet-400'>Graphic Designing</h2>
                 <h2>Enhance your brand{'\''}s visual identity with our creative graphic design solutions. From logos to marketing materials, we craft compelling visuals that captivate and engage your audience.</h2>
                 <span className='circle1'></span>
                 <span className='circle2'></span>
