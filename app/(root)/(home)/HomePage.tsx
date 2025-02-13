@@ -84,7 +84,7 @@ const HomePage = () => {
                     </div>
                 </section>
             </div >
-            <div>
+            <div className='hidden'>
                 <ParallaxProvider>
                     <div className='flex w-full md:flex-row flex-col'>
                         <div className=' w-full px-5'>
@@ -128,9 +128,9 @@ const HomePage = () => {
                     </div>
                 </ParallaxProvider>
             </div>
-            <Parallel />
+            {/* <Parallel /> */}
             <div ref={ref2} className="bg-background min-h-[100vh] w-full overflow-y-hidden overflow-x-hidden">
-                <h3 className='title mx-auto text-[30px]  font-extrabold w-full text-center mt-[100px] px-4'>Our Digital Services</h3>
+                <h3 className='title mx-auto text-[37px]  font-extrabold w-full text-center mt-[100px] px-4'>What We Do?</h3>
                 <OurServices />
             </div>
             {/* // Works HEad */}

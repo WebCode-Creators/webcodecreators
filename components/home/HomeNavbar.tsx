@@ -23,20 +23,18 @@ const HomeNavbar = () => {
                     <div onClick={() => {
                         setmenuopen(true)
                         console.log('open')
-                    }} className='relative p-2 md:hidden bg-black flex z-[1]'>
+                    }} className='relative p-2 md:hidden rounded-full bg-black flex z-[1]'>
                         <BiMenuAltRight className={`text-${navbarctx.light ? '' : 'white'}`} size={40} />
                     </div>
                 </div>
             </nav>
             <div className="topbar md:flex hidden fixed z-[999] bg-[#141414] border-[#262626] border-[0.02rem] p-1 rounded-full topbar">
-                <div className="flex flex-col relative">
                     <Link className='font-maim font-regular z-[999]' href={'/'}>HOME</Link>
-                    <Link className='font-main' href={'/'}>WORKS</Link>
-                    <Link className='font-main' href={'/'}>ABOUT US</Link>
-                    <Link className='font-main' href={'/'}>OUR TEAM</Link>
-                    <Link className='font-main' href={'/'}>CONTACT</Link>
+                    <Link className='font-main' href={'/#works'}>WORKS</Link>
+                    <Link className='font-main' href={'/#aboutus'}>ABOUT US</Link>
+                    <Link className='font-main' href={'/#ourteam'}>OUR TEAM</Link>
+                    <Link className='font-main' href={'/#contact'}>CONTACT</Link>
                     <div className="absolute top-0 left-0 bg-[#1F1F1F] w-[100px] h-full rounded-full z-[998]"></div>
-                </div>
             </div>
             <AnimatePresence>
                 {menuopen && <motion.div
@@ -46,6 +44,9 @@ const HomeNavbar = () => {
                     initial={{
                         y:-500
                     }}
+                    exit={{
+                        y:-500
+                    }}
                     animate={{y:0}}
                     className="left-0 right-0 top-0 md:hidden flex flex-col w-full h-auto fixed z-[999] bg-[#141414] border-[#262626] border-[0.02rem] p-1 rounded-b-xl">
                     <div className="flex relative flex-col gap-5 text-[20px] px-10 py-5">
@@ -53,11 +54,11 @@ const HomeNavbar = () => {
                             <h3 className='font-bebas text-zinc-600 text-4xl'>MENU</h3>
                             <X onClick={()=>setmenuopen(false)} size={40} />
                         </div>
-                        <Link className='font-main font-regular z-[999] text-primary' href={'/'}>HOME</Link>
-                        <Link className='font-main' href={'/'}>WORKS</Link>
-                        <Link className='font-main' href={'/'}>ABOUT US</Link>
-                        <Link className='font-main' href={'/'}>OUR TEAM</Link>
-                        <Link className='font-main' href={'/'}>CONTACT</Link>
+                        <Link onClick={()=>setmenuopen(false)} className='font-main font-regular z-[999] text-primary' href={'/'}>HOME</Link>
+                        <Link onClick={()=>setmenuopen(false)} className='font-main' href={'/#works'}>WORKS</Link>
+                        <Link onClick={()=>setmenuopen(false)} className='font-main' href={'/#aboutus'}>ABOUT US</Link>
+                        <Link onClick={()=>setmenuopen(false)} className='font-main' href={'/#ourworks'}>OUR TEAM</Link>
+                        <Link onClick={()=>setmenuopen(false)} className='font-main' href={'/#contact'}>CONTACT</Link>
                     </div>
                 </motion.div>}
             </AnimatePresence>

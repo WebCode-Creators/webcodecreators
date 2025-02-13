@@ -14,6 +14,7 @@ const NewHero = () => {
     return (
         <div className="max-h-[100dvh] pointer-events-none h-full overflow-hidden">
             <div className="w-full h-[1000px] relative">
+                <div className="absolute bg-gradient-to-t from-black via-transparent to-transparent pointer-events-auto top-0 left-0 right-0 bottom-0 w-full h-full z-[10]"></div>
                 <div className="absolute z-[2] top-[-50px] left-0 right-0">
                     <h1 className="font-main [line-height:80px] sm:text-[60px] text-[35px] sm:tracking-normal tracking-tight md:text-[80px] text-center">
                         <span className="flex md:[line-height:80px] [line-height:60px] sm:flex-row justify-center items-center sm:gap-2 flex-col sm:mb-[-70px] mb-[-100px]">Building the <span className="font-bebas relative gradient-text md:text-[80px] text-[80px]">
@@ -22,7 +23,7 @@ const NewHero = () => {
                         </span></span><br />of Digital Experiences
                     </h1>
                 </div>
-                <Canvas className="relative pointer-events-none drop-shadow-lg z-[2] mt-[200px] h-full"
+                <Canvas className="relative touch-none bg-none pointer-events-auto drop-shadow-lg z-[2] mt-[200px] h-full"
                     camera={{ position: [0, 0, 5], fov: 50 }} // Moves to front & lower level
                     style={{ background: "none" }}
                     gl={{ alpha: true }}>

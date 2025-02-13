@@ -20,15 +20,15 @@ const Scene = () => {
 
     useFrame(() => {
         // Move camera upwards as scroll progresses
-        // if (cameraRef.current) {
-        //     cameraRef.current.position.y = (progress*10) * 2; // Move up
-        //     cameraRef.current.lookAt(0, (progress*10) * -4, 0); // Look down
-        // }
+        if (cameraRef.current) {
+            cameraRef.current.position.y = (progress*10) * 2; // Move up
+            cameraRef.current.lookAt(0, (progress*10) * -4, 0); // Look down
+        }
 
-        // // Sink the laptop into the ground
-        // if (laptopRef.current) {
-        //     laptopRef.current.position.y = -progress * 2; // Move down
-        // }
+        // Sink the laptop into the ground
+        if (laptopRef.current) {
+            laptopRef.current.position.y = -progress * 2; // Move down
+        }
     });
     return (
         <>

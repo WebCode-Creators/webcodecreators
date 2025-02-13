@@ -17,7 +17,23 @@ export const LaptopModel: React.FC = () => {
   const { scrollYProgress } = useScroll();
   const [animationComplete, setAnimationComplete] = useState(false);
   const animationRef = useRef<THREE.AnimationAction | null>(null);
+  const [scale, setScale] = useState([1.5, 1.5, 1.5]); // Default scale for desktop
 
+  // Resize model based on screen width
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setScale([5, 5, 5]); // Smaller scale for mobile
+      } else {
+        setScale([7, 7, 7]); // Normal scale for desktop
+      }
+    };
+
+    handleResize(); // Set scale on mount
+    window.addEventListener("resize", handleResize); // Update scale on resize
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   useEffect(() => {
     const animationName = Object.keys(actions)[0]; // Get first animation
 
@@ -50,5 +66,5 @@ export const LaptopModel: React.FC = () => {
       }
     }
   });
-  return <primitive ref={group} object={scene} scale={[7, 7, 7]} rotation={[0, Math.PI / 2, 0]} /> // Increase size
+  return <primitive ref={group} object={scene} scale={scale} rotation={[0, Math.PI / 2, 0]} /> // Increase size
 };
